@@ -1,0 +1,5 @@
+{
+  "atomic_task": "Put the grabbed green cube into the yellow box",
+  "plan_brief": "Detect the target yellow box first, estimate a safe placement pose inside the yellow box, move to the placement pose, open the gripper to release the green cube, retreat upward from the placement position, return to the global observation pose, then verify whether the atomic task is completed.",
+  "program": "debug(\"Start executing placement task\")\nyellow_box = detect_object_by_text(\"yellow rectangular box\")\ndebug(\"Detected yellow target box\")\nplace_pose = estimate_place_pose(yellow_box)\ndebug(\"Estimated valid placement pose inside yellow box\")\nmove_to_pose(place_pose)\ndebug(\"Reached placement pose, ready to release object\")\nopen_gripper()\ndebug(\"Released green cube into yellow box\")\nretreat(z_offset_mm=100)\ndebug(\"Retreated upward to avoid collision\")\nreturn_to_observe_pose()\nresult = ai_verify_atomic_task()"
+}

@@ -1,0 +1,5 @@
+{
+  "atomic_task": "Grab the blue rectangular prism",
+  "plan_brief": "Detect the blue rectangular prism, estimate its top grasp pose, move to pre-grasp pose then grasp pose, close gripper to complete grasping, then retreat and return to observation pose.",
+  "program": "debug(\"Detecting blue rectangular prism object\")\nblue_rect_prism = detect_object_by_text(\"blue rectangular prism\")\ndebug(\"Estimating top grasp pose for the blue rectangular prism\")\ngrasp_pose = estimate_top_grasp_pose(blue_rect_prism)\ndebug(\"Building pre-grasp pose above the target object\")\npregrasp_pose = build_pregrasp_pose(grasp_pose)\ndebug(\"Moving to pre-grasp pose\")\nmove_to_pose(pregrasp_pose)\ndebug(\"Moving down to grasp pose\")\nmove_to_pose(grasp_pose)\ndebug(\"Closing gripper to grasp the object\")\nclose_gripper()\ndebug(\"Stabilizing the grasp\")\nstabilize_grasp()\ndebug(\"Retreating upward after grasping\")\nretreat()\ndebug(\"Returning to global observation pose\")\nreturn_to_observe_pose()"
+}

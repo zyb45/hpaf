@@ -1,0 +1,95 @@
+{
+  "query": "green cube",
+  "selected_label": "green cube",
+  "selected_source": "florence2",
+  "selected_depth_mm": 1000.0,
+  "selected_bbox": [
+    350,
+    296,
+    390,
+    338
+  ],
+  "selection_strategy": "vlm_review",
+  "selection_reason": "reviewer chose candidate #1",
+  "review_choice": 1,
+  "ranked_candidates": [
+    {
+      "idx": 1,
+      "source": "florence2",
+      "source_display": "Florence-2",
+      "label": "green cube",
+      "bbox": [
+        350,
+        296,
+        390,
+        338
+      ],
+      "raw_score": 1.0,
+      "final_score": 2518.69,
+      "depth_mm": 1000.0,
+      "z_mm": 1000.0,
+      "area_ratio": 0.0055,
+      "aspect": 0.952
+    },
+    {
+      "idx": 2,
+      "source": "grounding_dino_local",
+      "source_display": "GroundingDINO",
+      "label": "green cube",
+      "bbox": [
+        1,
+        194,
+        215,
+        382
+      ],
+      "raw_score": 0.2212,
+      "final_score": 89.6,
+      "depth_mm": 435.0,
+      "z_mm": 435.0,
+      "area_ratio": 0.131,
+      "aspect": 1.138
+    },
+    {
+      "idx": 3,
+      "source": "grounding_dino_local",
+      "source_display": "GroundingDINO",
+      "label": "green cube",
+      "bbox": [
+        451,
+        271,
+        570,
+        416
+      ],
+      "raw_score": 0.4209,
+      "final_score": -74.1,
+      "depth_mm": 421.0,
+      "z_mm": 421.0,
+      "area_ratio": 0.0562,
+      "aspect": 0.821
+    },
+    {
+      "idx": 4,
+      "source": "grounding_dino_local",
+      "source_display": "GroundingDINO",
+      "label": "green cube",
+      "bbox": [
+        59,
+        281,
+        129,
+        359
+      ],
+      "raw_score": 0.4436,
+      "final_score": -113.69,
+      "depth_mm": 396.0,
+      "z_mm": 396.0,
+      "area_ratio": 0.0178,
+      "aspect": 0.897
+    }
+  ],
+  "images": {
+    "florence": "florence_review_01.png",
+    "groundingdino": "groundingdino_review_01.png",
+    "final": "final_selection_01.png",
+    "crop": "final_object_crop_01.png"
+  }
+}

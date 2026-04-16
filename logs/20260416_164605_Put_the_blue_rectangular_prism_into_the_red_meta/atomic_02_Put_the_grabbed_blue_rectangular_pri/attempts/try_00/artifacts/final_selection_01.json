@@ -1,0 +1,59 @@
+{
+  "query": "red metal box",
+  "selected_label": "red metal box",
+  "selected_source": "florence2",
+  "selected_depth_mm": 438.0,
+  "selected_bbox": [
+    9,
+    186,
+    219,
+    369
+  ],
+  "selection_strategy": "vlm_review",
+  "selection_reason": "reviewer chose candidate #1",
+  "review_choice": 1,
+  "ranked_candidates": [
+    {
+      "idx": 1,
+      "source": "florence2",
+      "source_display": "Florence-2",
+      "label": "red metal box",
+      "bbox": [
+        9,
+        186,
+        219,
+        369
+      ],
+      "raw_score": 1.0,
+      "final_score": 3507.6,
+      "depth_mm": 438.0,
+      "z_mm": 438.0,
+      "area_ratio": 0.1251,
+      "aspect": 1.148
+    },
+    {
+      "idx": 2,
+      "source": "grounding_dino_local",
+      "source_display": "GroundingDINO",
+      "label": "red metal box",
+      "bbox": [
+        3,
+        54,
+        603,
+        478
+      ],
+      "raw_score": 0.2316,
+      "final_score": 2924.22,
+      "depth_mm": 448.0,
+      "z_mm": 448.0,
+      "area_ratio": 0.8281,
+      "aspect": 1.415
+    }
+  ],
+  "images": {
+    "florence": "florence_review_01.png",
+    "groundingdino": "groundingdino_review_01.png",
+    "final": "final_selection_01.png",
+    "crop": "final_object_crop_01.png"
+  }
+}

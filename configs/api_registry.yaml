@@ -1,0 +1,37 @@
+allowed_functions:
+- debug
+- detect_object_by_text
+- estimate_top_grasp_pose
+- build_pregrasp_pose
+- estimate_place_pose
+- open_gripper
+- close_gripper
+- move_to_pose
+- retreat
+- return_to_observe_pose
+- stabilize_grasp
+- ai_verify_atomic_task
+docs: |
+  debug(message): Print a debug message.
+
+  detect_object_by_text(text_query): Detect an object given an English or Chinese text description and return a detection object.
+
+  estimate_top_grasp_pose(obj): Estimate a top grasp pose from the current RGB-D frame in millimeters and degrees.
+
+  build_pregrasp_pose(grasp_pose, lift_mm=None): Build a pre-grasp pose directly above the grasp pose.
+
+  estimate_place_pose(target_region_obj): Estimate a safe placement pose inside the target region.
+
+  open_gripper(width_mm=None): Open the gripper, optionally to a specified width.
+
+  close_gripper(force=None): Close the gripper with a target force. The backend expects a roughly 0-1000 SDK force range; omit the argument to use the default safe force.
+
+  stabilize_grasp(force=None): Reassert the current gripper hold without opening the jaws.
+
+  move_to_pose(pose): Move the arm to a target pose.
+
+  retreat(z_offset_mm=None): Retreat upward from the last pose.
+
+  return_to_observe_pose(): Return to the configured global observe pose.
+
+  ai_verify_atomic_task(): Use the current global view together with the current atomic task text to ask the VLM whether the current atomic task has been completed and return a boolean result. This is the only verification API that generated programs should use.

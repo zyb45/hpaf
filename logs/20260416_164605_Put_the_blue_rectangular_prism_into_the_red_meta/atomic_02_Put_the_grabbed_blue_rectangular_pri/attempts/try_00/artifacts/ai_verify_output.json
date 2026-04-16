@@ -1,0 +1,13 @@
+{
+  "done": true,
+  "reason": "The blue rectangular prism is successfully placed inside the red metal box as required by the task.",
+  "confidence": 0.98,
+  "failure_stage": "none",
+  "atomic_task": "Put the grabbed blue rectangular prism into the red metal box",
+  "plan_brief": "Detect the red metal box first, estimate the safe placement pose inside the red box, move the robotic arm to the placement pose, open the gripper to release the object, retreat upward, return to the global observation pose, and finally verify whether the task is completed.",
+  "verify_image_path": "/home/zyb/hpaf/shared_scene/secondary/.snapshots/1776330905188_cae1e4e8.png",
+  "verify_image_source": "secondary_global_view",
+  "primary_verify_image_path": "/home/zyb/hpaf/shared_scene/primary/.snapshots/1776330905178_c5078544.png",
+  "secondary_verify_image_path": "/home/zyb/hpaf/shared_scene/secondary/.snapshots/1776330905188_cae1e4e8.png",
+  "elapsed_s": 6.2587
+}

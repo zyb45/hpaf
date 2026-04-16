@@ -1,0 +1,31 @@
+{
+  "pose_name": "grasp_pose",
+  "label": "green cube",
+  "bbox": [
+    350,
+    296,
+    390,
+    338
+  ],
+  "depth_mm": 437.0,
+  "pixel_rgb": [
+    370,
+    317
+  ],
+  "pixel_depth": [
+    370,
+    317
+  ],
+  "xyz_camera_mm": [
+    44.64036510325039,
+    67.7325078392765,
+    437.0
+  ],
+  "xyz_base_mm": [
+    310.788338760005,
+    -52.44443509391285,
+    -205.10425549774052
+  ],
+  "transform_mode": "camera_in_ee",
+  "image": "grasp_pose_01.png"
+}

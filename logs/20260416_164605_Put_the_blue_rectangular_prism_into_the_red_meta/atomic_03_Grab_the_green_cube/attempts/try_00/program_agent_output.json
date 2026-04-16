@@ -1,0 +1,5 @@
+{
+  "atomic_task": "Grab the green cube",
+  "plan_brief": "Detect the green cube, estimate its top grasp pose and pregrasp pose, move to pregrasp pose first then move to grasp pose, close the gripper to grab the cube, retreat upward after grasping, return to global observation pose and verify if the grab task is completed",
+  "program": "debug(\"Start grabbing green cube, detecting target object first\")\ngreen_cube = detect_object_by_text(\"green cube\")\ndebug(\"Detected green cube, estimating top grasp pose\")\ngrasp_pose = estimate_top_grasp_pose(green_cube)\npregrasp_pose = build_pregrasp_pose(grasp_pose)\ndebug(\"Opening gripper preparing for grasp\")\nopen_gripper()\ndebug(\"Moving to pregrasp pose\")\nmove_to_pose(pregrasp_pose)\ndebug(\"Moving down to grasp pose\")\nmove_to_pose(grasp_pose)\ndebug(\"Closing gripper to grab the cube\")\nclose_gripper()\nstabilize_grasp()\ndebug(\"Retreating upward after grasp\")\nretreat()\ndebug(\"Returning to global observation pose\")\nreturn_to_observe_pose()\nresult = ai_verify_atomic_task()"
+}

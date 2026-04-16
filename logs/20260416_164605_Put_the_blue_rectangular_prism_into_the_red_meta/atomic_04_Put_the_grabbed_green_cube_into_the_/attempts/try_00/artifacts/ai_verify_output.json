@@ -1,0 +1,13 @@
+{
+  "done": true,
+  "reason": "The green cube has been successfully placed inside the yellow box as required by the atomic task.",
+  "confidence": 0.99,
+  "failure_stage": "none",
+  "atomic_task": "Put the grabbed green cube into the yellow box",
+  "plan_brief": "Detect the target yellow box first, estimate a safe placement pose inside the yellow box, move to the placement pose, open the gripper to release the green cube, retreat upward from the placement position, return to the global observation pose, then verify whether the atomic task is completed.",
+  "verify_image_path": "/home/zyb/hpaf/shared_scene/secondary/.snapshots/1776331176210_ec43460c.png",
+  "verify_image_source": "secondary_global_view",
+  "primary_verify_image_path": "/home/zyb/hpaf/shared_scene/primary/.snapshots/1776331176194_d8ee1a51.png",
+  "secondary_verify_image_path": "/home/zyb/hpaf/shared_scene/secondary/.snapshots/1776331176210_ec43460c.png",
+  "elapsed_s": 6.5555
+}

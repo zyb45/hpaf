@@ -1,0 +1,21 @@
+Log file created at: 2026/04/12 12:25:43
+Running on machine: zyb-AI
+Running duration (h:mm:ss): 0:00:00
+Log line format: [IWEF]yyyymmdd hh:mm:ss.uuuuuu threadid file:line] msg
+[I20260412 12:25:43.825042 1505005 DeviceManager.cpp:54] DeviceManager init ...
+[I20260412 12:25:43.825106 1505005 LinuxPal.cpp:21] createObPal: create LinuxPal!
+[I20260412 12:25:43.944752 1505005 EnumeratorLibusb.cpp:325] queryDevicesInfo done!
+[I20260412 12:25:44.042395 1505005 DeviceManager.cpp:373] Current usb device port list::
+[I20260412 12:25:44.042495 1505005 DeviceManager.cpp:375]         - 3-1.4.2-60.0 | Orbbec(R) Astra(TM) 3D Camera(F) Depth
+[I20260412 12:25:44.042503 1505005 DeviceManager.cpp:375]         - 3-1.4.1-57.0 | USB Camera
+[I20260412 12:25:44.042510 1505005 DeviceManager.cpp:375]         - 3-1.3.2-63.0 | USB Camera
+[I20260412 12:25:44.042517 1505005 DeviceManager.cpp:375]         - 3-1.3.1-62.0 | Orbbec(R) Astra(TM) 3D Camera(F) Depth
+[I20260412 12:25:44.042523 1505005 DeviceManager.cpp:375]         - 3-1.3.1-62.1 | Orbbec(R) Astra(TM) Audio Devive
+[W20260412 12:25:44.042594 1505005 OpenNIDeviceInfo.cpp:172] New openni device matched.
+[W20260412 12:25:44.042691 1505005 OpenNIDeviceInfo.cpp:172] New openni device matched.
+[I20260412 12:25:44.042706 1505005 DeviceManager.cpp:345] Devices matched:
+[I20260412 12:25:44.042713 1505005 DeviceManager.cpp:359]   - openniDevice = 2
+[I20260412 12:25:44.042981 1505005 LinuxPal.cpp:142] Create PollingDeviceWatcher!
+[I20260412 12:25:44.043015 1505005 DeviceManager.cpp:99] DeviceManager init  done!
+[I20260412 12:25:44.043023 1505005 DeviceManager.cpp:50] DeviceManager construct done
+[I20260412 12:25:44.043031 1505005 Context.cpp:51] Context created!

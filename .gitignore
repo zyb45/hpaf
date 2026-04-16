@@ -1,0 +1,7 @@
+logs/startup/
+.vscode/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+hpaf.egg-info/

@@ -1,0 +1,18 @@
+{
+  "camera_info_path": "/home/zyb/hpaf/shared_scene/secondary/latest_camera_info.json",
+  "camera_info_mtime_ns": 1776333166497580630,
+  "camera_ns": "/camera_astra",
+  "shared_dir": "/home/zyb/hpaf/shared_scene/secondary",
+  "writer_pid": 666505,
+  "writer_wall_time_ns": 1776333166502968304,
+  "rgb_path": "/home/zyb/hpaf/shared_scene/secondary/latest_color.png",
+  "rgb_mtime_ns": 1776333166385574511,
+  "rgb_shape": [
+    480,
+    640,
+    3
+  ],
+  "rgb_encoding": "rgb8",
+  "rgb_frame_id": "camera_astra_color_optical_frame",
+  "rgb_stamp_ns": 1776333166199000064
+}

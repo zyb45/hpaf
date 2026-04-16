@@ -1,0 +1,13 @@
+{
+  "done": false,
+  "reason": "The target green cube is neither observed to be grasped by the robot gripper nor present on the workbench, so the grab task of the green cube is not completed.",
+  "confidence": 0.95,
+  "failure_stage": "perception",
+  "atomic_task": "Grab the green cube",
+  "plan_brief": "Detect the green cube, estimate its top grasp pose and pregrasp pose, move to pregrasp pose first then move to grasp pose, close the gripper to grab the cube, retreat upward after grasping, return to global observation pose and verify if the grab task is completed",
+  "verify_image_path": "/home/zyb/hpaf/shared_scene/secondary/.snapshots/1776331048569_6ef7c328.png",
+  "verify_image_source": "secondary_global_view",
+  "primary_verify_image_path": "/home/zyb/hpaf/shared_scene/primary/.snapshots/1776331048558_9bf862f0.png",
+  "secondary_verify_image_path": "/home/zyb/hpaf/shared_scene/secondary/.snapshots/1776331048569_6ef7c328.png",
+  "elapsed_s": 24.0038
+}

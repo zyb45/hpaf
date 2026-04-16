@@ -1,0 +1,73 @@
+llm:
+  provider: doubao
+  base_url: https://ark.cn-beijing.volces.com/api/v3
+  api_key_env: ARK_API_KEY
+  model: doubao-seed-2-0-pro-260215
+  max_output_tokens: 4096
+  temperature: 0.2
+
+cameras:
+  primary_shared_dir: ./shared_scene/primary
+  secondary_shared_dir: ./shared_scene/secondary  # RGB-only reference view; no depth/3D transform used
+  rgb_filename: latest_color.png
+  depth_filename: latest_depth.npy
+  camera_info_filename: latest_camera_info.json
+  primary_extrinsic_json: ./assets/eyeinhand.json
+  primary_extrinsic_direction: camera_in_ee
+  secondary_extrinsic_json: ./assets/cur.json
+  freshness_max_age_s: 3.0
+
+robot:
+  backend: piper
+  can_name: can0
+  speed_percent: 100
+  move_mode: "0x00"
+  pose_wait_s: 0.4
+  grip_wait_s: 0.4
+  review_require_yes: true
+  connect_on_start: true
+  pose_command_hz: 50
+  pose_command_duration_s: 1.0
+  gripper_command_hz: 100
+  gripper_command_duration_s: 0.5
+  gripper_max_width_mm: 70.0
+  gripper_mm_to_ctrl: 1000.0
+  gripper_open_force: 1000
+  gripper_close_force: 1000
+  reach_min_x_mm: 120.0
+  reach_max_x_mm: 430.0
+  reach_max_abs_y_mm: 260.0
+  reach_max_planar_radius_mm: 460.0
+
+pipeline:
+  max_verify_retries: 2
+  logs_dir: ./logs
+  stop_on_failure: true
+  save_generated_scripts: true
+
+verify:
+  mode: human
+  require_yes_on_human_verify: true
+
+api_runtime:
+  default_pregrasp_lift_mm: 60
+  default_retreat_mm: 90
+  default_close_force: 1500
+  default_open_width_mm: 50.0
+  default_place_drop_mm: 20
+  default_tool_orientation_deg: [-178.186, 55.23, 179.628]
+  grasp_xyz_offset_mm: [-30.0,10.0, 140.0]
+  place_xyz_offset_mm: [0.0, -0.0, 100.0]
+  min_safe_z_mm: 50.0
+  observe_pose_xyzrpy_mmdeg: [188, -13, 286, -177, 4, 178]
+
+perception:
+  backend: foundation_vision
+  foundation_model_provider: auto
+  florence_model_id: /home/zyb/models/Florence-2-large
+  grounding_dino_model_id: IDEA-Research/grounding-dino-base
+  grounding_dino_repo_dir: /home/zyb/models/GroundingDINO
+  grounding_dino_ckpt_path: /home/zyb/models/GroundingDINO/weights/groundingdino_swint_ogc.pth
+  llm_fallback: true
+  debug: true
+  device: auto

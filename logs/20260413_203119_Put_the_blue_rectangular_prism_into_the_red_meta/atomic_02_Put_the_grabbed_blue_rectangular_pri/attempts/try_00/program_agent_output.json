@@ -1,0 +1,5 @@
+{
+  "atomic_task": "Put the grabbed blue rectangular prism into the red metal box",
+  "plan_brief": "Locate the red metal box target region, estimate a safe placement pose inside the box, move the robotic arm to the placement pose, open the gripper to release the grabbed object, retreat upward, then return to the global observation pose.",
+  "program": "debug(\"Initiate placement task for grabbed object into red metal box\")\nred_box = detect_object_by_text(\"red metal box\")\ndebug(\"Estimate valid placement pose inside red metal box\")\nplace_pose = estimate_place_pose(red_box)\ndebug(\"Move end effector to calculated placement pose\")\nmove_to_pose(place_pose)\ndebug(\"Open gripper to release the object\")\nopen_gripper()\ndebug(\"Retreat upward after placement\")\nretreat()\ndebug(\"Return to global observation pose\")\nreturn_to_observe_pose()"
+}

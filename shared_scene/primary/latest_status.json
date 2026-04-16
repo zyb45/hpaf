@@ -1,0 +1,28 @@
+{
+  "camera_info_path": "/home/zyb/hpaf/shared_scene/primary/latest_camera_info.json",
+  "camera_info_mtime_ns": 1776333166485579974,
+  "camera_ns": "/camera_gemini",
+  "shared_dir": "/home/zyb/hpaf/shared_scene/primary",
+  "writer_pid": 666505,
+  "writer_wall_time_ns": 1776333166491428386,
+  "rgb_path": "/home/zyb/hpaf/shared_scene/primary/latest_color.png",
+  "rgb_mtime_ns": 1776333166315570686,
+  "rgb_shape": [
+    480,
+    640,
+    3
+  ],
+  "rgb_encoding": "rgb8",
+  "rgb_frame_id": "color_optical_frame",
+  "rgb_stamp_ns": 1776333166115000064,
+  "depth_path": "/home/zyb/hpaf/shared_scene/primary/latest_depth.npy",
+  "depth_mtime_ns": 1776333166328571397,
+  "depth_shape": [
+    480,
+    640
+  ],
+  "depth_dtype": "uint16",
+  "depth_encoding": "16UC1",
+  "depth_frame_id": "color_optical_frame",
+  "depth_stamp_ns": 1776333166183000064
+}

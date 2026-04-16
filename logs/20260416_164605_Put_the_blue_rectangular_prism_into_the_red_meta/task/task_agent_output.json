@@ -1,0 +1,9 @@
+{
+  "scene_summary": "The scene contains two adjacent white work surfaces. The lower work surface is placed with target objects: a red rectangular metal box, a blue rectangular prism, a small green cube, and a yellow rectangular tray. The upper work surface has a game controller, wiring accessories, and a robotic arm fixture mounted on its edge, with multiple connecting cables distributed between the two work surfaces.",
+  "atomic_tasks": [
+    "Grab the blue rectangular prism",
+    "Put the grabbed blue rectangular prism into the red metal box",
+    "Grab the green cube",
+    "Put the grabbed green cube into the yellow box"
+  ]
+}

@@ -1,0 +1,5 @@
+{
+  "atomic_task": "Grab the green cube",
+  "plan_brief": "Detect the green cube object, estimate its top grasp pose, move to pre-grasp pose then grasp pose, close the gripper to complete grasping, then retreat and return to global observation pose",
+  "program": "debug(\"Starting green cube detection\")\ngreen_cube = detect_object_by_text(\"green cube\")\ndebug(\"Estimating top grasp pose for green cube\")\ngrasp_pose = estimate_top_grasp_pose(green_cube)\ndebug(\"Building pre-grasp pose above the target\")\npregrasp_pose = build_pregrasp_pose(grasp_pose)\ndebug(\"Opening gripper to prepare for grasp\")\nopen_gripper()\ndebug(\"Moving to pre-grasp pose\")\nmove_to_pose(pregrasp_pose)\ndebug(\"Moving down to grasp pose\")\nmove_to_pose(grasp_pose)\ndebug(\"Closing gripper to grasp the cube\")\nclose_gripper()\ndebug(\"Stabilizing the grasp\")\nstabilize_grasp()\ndebug(\"Retreating upward after grasp\")\nretreat()\ndebug(\"Returning to global observe pose\")\nreturn_to_observe_pose()"
+}

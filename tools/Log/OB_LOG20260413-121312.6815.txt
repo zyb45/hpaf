@@ -1,0 +1,15 @@
+Log file created at: 2026/04/13 12:13:12
+Running on machine: zyb-AI
+Running duration (h:mm:ss): 0:00:00
+Log line format: [IWEF]yyyymmdd hh:mm:ss.uuuuuu threadid file:line] msg
+[I20260413 12:13:12.594359  6815 DeviceManager.cpp:54] DeviceManager init ...
+[I20260413 12:13:12.594432  6815 LinuxPal.cpp:21] createObPal: create LinuxPal!
+[I20260413 12:13:12.841192  6815 EnumeratorLibusb.cpp:325] queryDevicesInfo done!
+[I20260413 12:13:12.939262  6815 DeviceManager.cpp:373] Current usb device port list::
+[I20260413 12:13:12.939291  6815 DeviceManager.cpp:375]         - 3-1.4.1-14.0 | USB Camera
+[I20260413 12:13:12.939296  6815 DeviceManager.cpp:375]         - 3-1.3.2-21.0 | USB Camera
+[I20260413 12:13:12.939306  6815 DeviceManager.cpp:362] No device matched!
+[I20260413 12:13:12.939399  6815 LinuxPal.cpp:142] Create PollingDeviceWatcher!
+[I20260413 12:13:12.939409  6815 DeviceManager.cpp:99] DeviceManager init  done!
+[I20260413 12:13:12.939414  6815 DeviceManager.cpp:50] DeviceManager construct done
+[I20260413 12:13:12.939419  6815 Context.cpp:51] Context created!

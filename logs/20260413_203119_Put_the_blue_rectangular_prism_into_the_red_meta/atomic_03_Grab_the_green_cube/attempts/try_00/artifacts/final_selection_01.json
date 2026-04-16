@@ -1,0 +1,77 @@
+{
+  "query": "green cube",
+  "selected_label": "green cube",
+  "selected_source": "florence2",
+  "selected_depth_mm": 1000.0,
+  "selected_bbox": [
+    341,
+    301,
+    380,
+    342
+  ],
+  "selection_strategy": "vlm_review",
+  "selection_reason": "reviewer chose candidate #1",
+  "review_choice": 1,
+  "ranked_candidates": [
+    {
+      "idx": 1,
+      "source": "florence2",
+      "source_display": "Florence-2",
+      "label": "green cube",
+      "bbox": [
+        341,
+        301,
+        380,
+        342
+      ],
+      "raw_score": 1.0,
+      "final_score": 2516.63,
+      "depth_mm": 1000.0,
+      "z_mm": 1000.0,
+      "area_ratio": 0.0052,
+      "aspect": 0.951
+    },
+    {
+      "idx": 2,
+      "source": "grounding_dino_local",
+      "source_display": "GroundingDINO",
+      "label": "green cube",
+      "bbox": [
+        439,
+        256,
+        557,
+        401
+      ],
+      "raw_score": 0.2819,
+      "final_score": -207.81,
+      "depth_mm": 426.0,
+      "z_mm": 426.0,
+      "area_ratio": 0.0557,
+      "aspect": 0.814
+    },
+    {
+      "idx": 3,
+      "source": "grounding_dino_local",
+      "source_display": "GroundingDINO",
+      "label": "green cube",
+      "bbox": [
+        116,
+        298,
+        196,
+        356
+      ],
+      "raw_score": 0.3035,
+      "final_score": -373.51,
+      "depth_mm": 395.0,
+      "z_mm": 395.0,
+      "area_ratio": 0.0151,
+      "aspect": 1.379
+    }
+  ],
+  "images": {
+    "florence": "florence_review_01.png",
+    "groundingdino": "groundingdino_review_01.png",
+    "final": "final_selection_01.png",
+    "crop": "final_object_crop_01.png"
+  }
+}

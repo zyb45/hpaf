@@ -1,0 +1,13 @@
+{
+  "done": true,
+  "reason": "The blue rectangular prism is successfully held by the robotic gripper, which has lifted it up, so the grab task is completed.",
+  "confidence": 0.98,
+  "failure_stage": "none",
+  "atomic_task": "Grab the blue rectangular prism",
+  "plan_brief": "Detect the blue rectangular prism first, then estimate its top grasp pose and corresponding pre-grasp pose, then move to pre-grasp pose then grasp pose, close the gripper to grab the object, retreat upward, return to observe pose and verify if the task is completed.",
+  "verify_image_path": "/home/zyb/hpaf/shared_scene/secondary/.snapshots/1776330837218_06cb81b2.png",
+  "verify_image_source": "secondary_global_view",
+  "primary_verify_image_path": "/home/zyb/hpaf/shared_scene/primary/.snapshots/1776330837200_2140e550.png",
+  "secondary_verify_image_path": "/home/zyb/hpaf/shared_scene/secondary/.snapshots/1776330837218_06cb81b2.png",
+  "elapsed_s": 8.1273
+}

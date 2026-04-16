@@ -1,0 +1,9 @@
+{
+  "scene_summary": "On the white desktop, a red square metal box is placed at the upper position, a blue rectangular prism is located below the red box, a green cube is set below the blue rectangular prism, a yellow square box is placed at the lower position of the desktop, and a robotic arm is arranged on the left side of the desktop to perform operations.",
+  "atomic_tasks": [
+    "Grab the blue rectangular prism",
+    "Put the grabbed blue rectangular prism into the red metal box",
+    "Grab the green cube",
+    "Put the grabbed green cube into the yellow box"
+  ]
+}

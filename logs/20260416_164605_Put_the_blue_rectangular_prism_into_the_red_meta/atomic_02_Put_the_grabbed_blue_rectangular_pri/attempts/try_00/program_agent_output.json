@@ -1,0 +1,5 @@
+{
+  "atomic_task": "Put the grabbed blue rectangular prism into the red metal box",
+  "plan_brief": "Detect the red metal box first, estimate the safe placement pose inside the red box, move the robotic arm to the placement pose, open the gripper to release the object, retreat upward, return to the global observation pose, and finally verify whether the task is completed.",
+  "program": "debug(\"Start perception step: detect target red metal box\")\nred_box = detect_object_by_text(\"red metal box\")\ndebug(\"Perception step finished, start aligning to placement pose\")\nplace_pose = estimate_place_pose(red_box)\nmove_to_pose(place_pose)\ndebug(\"Aligned to placement pose, start interaction step\")\nopen_gripper()\ndebug(\"Object released, retreat upward\")\nretreat()\ndebug(\"Return to global observation pose\")\nreturn_to_observe_pose()\nresult = ai_verify_atomic_task()"
+}

@@ -1,0 +1,59 @@
+{
+  "query": "blue rectangular prism",
+  "selected_label": "blue rectangular prism",
+  "selected_source": "florence2",
+  "selected_depth_mm": 399.0,
+  "selected_bbox": [
+    318,
+    309,
+    354,
+    381
+  ],
+  "selection_strategy": "vlm_review",
+  "selection_reason": "reviewer chose candidate #1",
+  "review_choice": 1,
+  "ranked_candidates": [
+    {
+      "idx": 1,
+      "source": "florence2",
+      "source_display": "Florence-2",
+      "label": "blue rectangular prism",
+      "bbox": [
+        318,
+        309,
+        354,
+        381
+      ],
+      "raw_score": 1.0,
+      "final_score": 2537.89,
+      "depth_mm": 399.0,
+      "z_mm": 399.0,
+      "area_ratio": 0.0084,
+      "aspect": 0.5
+    },
+    {
+      "idx": 2,
+      "source": "florence2",
+      "source_display": "Florence-2",
+      "label": "blue rectangular prism",
+      "bbox": [
+        420,
+        338,
+        462,
+        376
+      ],
+      "raw_score": 0.95,
+      "final_score": -117.62,
+      "depth_mm": 1000.0,
+      "z_mm": 1000.0,
+      "area_ratio": 0.0052,
+      "aspect": 1.105
+    }
+  ],
+  "images": {
+    "florence": "florence_review_01.png",
+    "groundingdino": "groundingdino_review_01.png",
+    "final": "final_selection_01.png",
+    "crop": "final_object_crop_01.png"
+  }
+}

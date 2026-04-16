@@ -1,0 +1,31 @@
+{
+  "pose_name": "place_pose",
+  "label": "red metal box",
+  "bbox": [
+    67,
+    235,
+    267,
+    425
+  ],
+  "depth_mm": 420.0,
+  "pixel_rgb": [
+    186,
+    351
+  ],
+  "pixel_depth": [
+    186,
+    351
+  ],
+  "xyz_camera_mm": [
+    -127.75892661218711,
+    96.63310555041264,
+    420.0
+  ],
+  "xyz_base_mm": [
+    274.83005907377895,
+    118.56171680933612,
+    10.0
+  ],
+  "transform_mode": "camera_in_ee",
+  "image": "place_pose_01.png"
+}
