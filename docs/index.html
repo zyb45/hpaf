@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="HPAF is a hierarchical program-aided framework for real-world long-horizon robotic task execution on a PiPER arm."
+    >
+    <title>HPAF | Hierarchical Program-Aided Framework</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="hero" id="top">
+      <div class="hero-media" aria-hidden="true">
+        <video autoplay muted loop playsinline poster="assets/logs/grasp-blue-selection.png">
+          <source src="assets/demo.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="hero-shade" aria-hidden="true"></div>
+
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a class="brand" href="#top">HPAF</a>
+        <div class="nav-links">
+          <a href="#architecture">Architecture</a>
+          <a href="#demo">Demo</a>
+          <a href="#trace">Trace</a>
+          <a href="#code">Code</a>
+        </div>
+      </nav>
+
+      <div class="hero-content">
+        <p class="eyebrow">Real-world robot manipulation | PiPER arm | dual-view RGB-D</p>
+        <h1>HPAF</h1>
+        <p class="subtitle">
+          Hierarchical Program-Aided Framework for turning a long-horizon language instruction
+          into API-grounded Python programs, real robot execution, and verification-gated progress.
+        </p>
+        <div class="hero-actions" aria-label="Project links">
+          <a href="https://github.com/zyb45/hpaf">GitHub repository</a>
+          <a href="#demo">Watch the demo</a>
+        </div>
+        <dl class="hero-metrics">
+          <div>
+            <dt>4</dt>
+            <dd>atomic tasks in the logged run</dd>
+          </div>
+          <div>
+            <dt>2</dt>
+            <dd>camera streams for grounding and checking</dd>
+          </div>
+          <div>
+            <dt>12</dt>
+            <dd>runtime APIs for generated programs</dd>
+          </div>
+        </dl>
+      </div>
+    </header>
+
+    <main>
+      <section class="section overview" id="overview">
+        <div class="section-inner split">
+          <div>
+            <p class="section-label">Project overview</p>
+            <h2>Long-horizon manipulation as program generation.</h2>
+          </div>
+          <div class="lead-copy">
+            <p>
+              HPAF decomposes a complex tabletop instruction into ordered atomic tasks. For each
+              atomic task, a ProgramAgent synthesizes a short executable program over a small robot
+              API library, then the system executes the program on a real PiPER arm and checks
+              whether the task is complete before moving forward.
+            </p>
+            <p>
+              The current prototype connects a TaskAgent, ProgramAgent, foundation-vision perception,
+              PiPER robot backend, organized run logging, and human or AI-assisted verification.
+            </p>
+          </div>
+        </div>
+
+        <div class="section-inner contribution-grid" aria-label="Key contributions">
+          <article class="contribution">
+            <h3>Dual-layer decomposition</h3>
+            <p>Complex instruction to atomic tasks, then each atomic task to perception, alignment, interaction, and verification.</p>
+          </article>
+          <article class="contribution">
+            <h3>API-grounded programs</h3>
+            <p>LLM output is constrained to executable Python built from registered robot capabilities rather than free-form plans.</p>
+          </article>
+          <article class="contribution">
+            <h3>Debuggable real runs</h3>
+            <p>Every attempt records generated code, perception artifacts, pose estimates, and verification outputs for inspection.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section architecture" id="architecture">
+        <div class="section-inner">
+          <p class="section-label">Framework diagram</p>
+          <h2>Task-level reasoning stays separated from robot-specific execution.</h2>
+          <figure class="architecture-figure">
+            <img
+              src="assets/architecture.png"
+              alt="HPAF architecture showing task decomposition, program generation, runtime APIs, robot backend, and verification loop"
+            >
+            <figcaption>
+              Diagram exported from the LaTeX paper figure. The high-level logic is expressed as API calls,
+              while the backend can bind those calls to real robot perception and motion components.
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="section demo" id="demo">
+        <div class="section-inner split">
+          <div>
+            <p class="section-label">Demo video</p>
+            <h2>Real tabletop execution with generated atomic programs.</h2>
+          </div>
+          <p class="lead-copy">
+            The demo uses a PiPER arm, an eye-in-hand RGB-D stream for precise grounding, and a
+            secondary global view for scene understanding and completion checking.
+          </p>
+        </div>
+        <div class="section-inner">
+          <video class="demo-video" controls preload="metadata" poster="assets/logs/grasp-blue-pose.png">
+            <source src="assets/demo.mp4" type="video/mp4">
+          </video>
+        </div>
+      </section>
+
+      <section class="section trace" id="trace">
+        <div class="section-inner split">
+          <div>
+            <p class="section-label">Logged run</p>
+            <h2>Instruction to four verified atomic tasks.</h2>
+          </div>
+          <div class="run-summary">
+            <p class="instruction">
+              "Put the blue rectangular prism into the red metal box. Put the green cube into the yellow box."
+            </p>
+            <p>
+              Latest selected run: <strong>2026-04-16</strong>, 4 atomic tasks, 2891.3 seconds total.
+              The human verification log marks all four atomic tasks complete, while AI verification
+              artifacts are saved for automated checking and future comparison.
+            </p>
+          </div>
+        </div>
+
+        <div class="section-inner timeline" aria-label="Atomic task timeline">
+          <article class="task-card">
+            <span class="task-index">01</span>
+            <h3>Grab the blue rectangular prism</h3>
+            <p>Detect the object, estimate a top grasp pose, close the gripper, retreat, and return to observe pose.</p>
+            <strong>Human verified</strong>
+          </article>
+          <article class="task-card">
+            <span class="task-index">02</span>
+            <h3>Place the blue prism into the red metal box</h3>
+            <p>Localize the red box, compute a placement pose inside the target region, release, and verify.</p>
+            <strong>Human verified</strong>
+          </article>
+          <article class="task-card">
+            <span class="task-index">03</span>
+            <h3>Grab the green cube</h3>
+            <p>Reuse the same generated grasp structure with a different object query and pose estimate.</p>
+            <strong>Human verified</strong>
+          </article>
+          <article class="task-card">
+            <span class="task-index">04</span>
+            <h3>Place the green cube into the yellow box</h3>
+            <p>Switch from grasping to placement APIs while preserving the same verification-gated flow.</p>
+            <strong>Human verified</strong>
+          </article>
+        </div>
+
+        <div class="section-inner gallery" aria-label="Perception and pose artifacts from logs">
+          <figure>
+            <img src="assets/logs/grasp-blue-selection.png" alt="Blue rectangular prism selected by the perception module">
+            <figcaption>Open-vocabulary detection selects the blue rectangular prism.</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/logs/grasp-blue-pose.png" alt="Top grasp pose estimated for the blue rectangular prism">
+            <figcaption>RGB-D grounding converts the selected object into a grasp pose.</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/logs/place-blue-pose.png" alt="Placement pose inside the red metal box">
+            <figcaption>Placement estimates target a safe pose inside the red box.</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/logs/place-green-pose.png" alt="Placement pose inside the yellow box">
+            <figcaption>The same API pattern transfers to the green cube and yellow box.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="section code" id="code">
+        <div class="section-inner split">
+          <div>
+            <p class="section-label">Generated code</p>
+            <h2>Atomic tasks become inspectable Python.</h2>
+          </div>
+          <p class="lead-copy">
+            The ProgramAgent is only allowed to call registered runtime APIs such as
+            <code>detect_object_by_text</code>, <code>estimate_top_grasp_pose</code>,
+            <code>move_to_pose</code>, and <code>ai_verify_atomic_task</code>.
+          </p>
+        </div>
+
+        <div class="section-inner code-layout">
+          <pre><code>debug("Starting detection of target blue rectangular prism")
+blue_prism = detect_object_by_text("blue rectangular prism")
+grasp_pose = estimate_top_grasp_pose(blue_prism)
+pregrasp_pose = build_pregrasp_pose(grasp_pose)
+
+open_gripper()
+move_to_pose(pregrasp_pose)
+move_to_pose(grasp_pose)
+close_gripper()
+stabilize_grasp()
+retreat()
+return_to_observe_pose()
+result = ai_verify_atomic_task()</code></pre>
+
+          <div class="stack-list" aria-label="Implementation modules">
+            <a href="https://github.com/zyb45/hpaf/blob/main/hpaf/pipeline/orchestrator.py">
+              PipelineOrchestrator | run directories, retries, generated scripts
+            </a>
+            <a href="https://github.com/zyb45/hpaf/blob/main/hpaf/api/runtime_api.py">
+              RuntimeAPI | robot-safe functions exposed to generated programs
+            </a>
+            <a href="https://github.com/zyb45/hpaf/blob/main/hpaf/perception/foundation_vision_perception.py">
+              FoundationVisionPerceptionService | Florence-2, GroundingDINO, RGB-D pose artifacts
+            </a>
+            <a href="https://github.com/zyb45/hpaf/blob/main/configs/api_registry.yaml">
+              API registry | bounded action space for code generation
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>HPAF | Hierarchical Program-Aided Framework for Real-World Robotic Task Execution</p>
+      <a href="#top">Back to top</a>
+    </footer>
+  </body>
+</html>

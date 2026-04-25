@@ -1,5 +1,11 @@
 logs/startup/
 .vscode/
+.codex
+.codex/
+
+# Local paper/thesis workspace.
+RA-L/
+
 __pycache__/
 *.pyc
 *.pyo
