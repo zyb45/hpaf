@@ -13,9 +13,7 @@
   <body>
     <header class="hero" id="top">
       <div class="hero-media" aria-hidden="true">
-        <video autoplay muted loop playsinline poster="assets/logs/grasp-blue-selection.png">
-          <source src="assets/demo.mp4" type="video/mp4">
-        </video>
+        <img src="assets/hero-robot-lab.png" alt="">
       </div>
       <div class="hero-shade" aria-hidden="true"></div>
 
@@ -43,15 +41,15 @@
         <dl class="hero-metrics">
           <div>
             <dt>4</dt>
-            <dd>atomic tasks in the logged run</dd>
+            <dd>logged tasks</dd>
           </div>
           <div>
             <dt>2</dt>
-            <dd>camera streams for grounding and checking</dd>
+            <dd>camera streams</dd>
           </div>
           <div>
             <dt>12</dt>
-            <dd>runtime APIs for generated programs</dd>
+            <dd>runtime APIs</dd>
           </div>
         </dl>
       </div>
@@ -122,10 +120,33 @@
             secondary global view for scene understanding and completion checking.
           </p>
         </div>
-        <div class="section-inner">
-          <video class="demo-video" controls preload="metadata" poster="assets/logs/grasp-blue-pose.png">
-            <source src="assets/demo.mp4" type="video/mp4">
-          </video>
+        <div class="section-inner demo-showcase">
+          <div class="demo-player" aria-label="Portrait demo video player">
+            <video class="demo-video" controls autoplay muted loop playsinline preload="auto">
+              <source src="assets/demo.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="demo-panel">
+            <p>
+              The source video is a portrait recording, so the page keeps it in a 9:16 player
+              instead of stretching it into a landscape slot. This preserves the robot motion and
+              tabletop layout without hiding the video behind a still image.
+            </p>
+            <dl class="demo-facts">
+              <div>
+                <dt>720 x 1280</dt>
+                <dd>portrait source video</dd>
+              </div>
+              <div>
+                <dt>38.6 s</dt>
+                <dd>hardware demo clip</dd>
+              </div>
+              <div>
+                <dt>PiPER</dt>
+                <dd>real arm backend</dd>
+              </div>
+            </dl>
+          </div>
         </div>
       </section>
 
@@ -140,9 +161,9 @@
               "Put the blue rectangular prism into the red metal box. Put the green cube into the yellow box."
             </p>
             <p>
-              Latest selected run: <strong>2026-04-16</strong>, 4 atomic tasks, 2891.3 seconds total.
-              The human verification log marks all four atomic tasks complete, while AI verification
-              artifacts are saved for automated checking and future comparison.
+              Latest selected run: <strong>2026-04-16</strong>, 4 atomic tasks. The human
+              verification log marks all four atomic tasks complete, while AI verification artifacts
+              are saved for automated checking and future comparison.
             </p>
           </div>
         </div>
@@ -150,47 +171,32 @@
         <div class="section-inner timeline" aria-label="Atomic task timeline">
           <article class="task-card">
             <span class="task-index">01</span>
+            <img class="task-shot" src="assets/logs/task-01-grasp-blue.png" alt="Grasp pose estimated for the blue rectangular prism">
             <h3>Grab the blue rectangular prism</h3>
             <p>Detect the object, estimate a top grasp pose, close the gripper, retreat, and return to observe pose.</p>
             <strong>Human verified</strong>
           </article>
           <article class="task-card">
             <span class="task-index">02</span>
+            <img class="task-shot" src="assets/logs/task-02-place-blue.png" alt="Placement pose estimated inside the red metal box">
             <h3>Place the blue prism into the red metal box</h3>
             <p>Localize the red box, compute a placement pose inside the target region, release, and verify.</p>
             <strong>Human verified</strong>
           </article>
           <article class="task-card">
             <span class="task-index">03</span>
+            <img class="task-shot" src="assets/logs/task-03-grasp-green.png" alt="Grasp pose estimated for the green cube">
             <h3>Grab the green cube</h3>
             <p>Reuse the same generated grasp structure with a different object query and pose estimate.</p>
             <strong>Human verified</strong>
           </article>
           <article class="task-card">
             <span class="task-index">04</span>
+            <img class="task-shot" src="assets/logs/task-04-place-green.png" alt="Placement pose estimated inside the yellow box">
             <h3>Place the green cube into the yellow box</h3>
             <p>Switch from grasping to placement APIs while preserving the same verification-gated flow.</p>
             <strong>Human verified</strong>
           </article>
-        </div>
-
-        <div class="section-inner gallery" aria-label="Perception and pose artifacts from logs">
-          <figure>
-            <img src="assets/logs/grasp-blue-selection.png" alt="Blue rectangular prism selected by the perception module">
-            <figcaption>Open-vocabulary detection selects the blue rectangular prism.</figcaption>
-          </figure>
-          <figure>
-            <img src="assets/logs/grasp-blue-pose.png" alt="Top grasp pose estimated for the blue rectangular prism">
-            <figcaption>RGB-D grounding converts the selected object into a grasp pose.</figcaption>
-          </figure>
-          <figure>
-            <img src="assets/logs/place-blue-pose.png" alt="Placement pose inside the red metal box">
-            <figcaption>Placement estimates target a safe pose inside the red box.</figcaption>
-          </figure>
-          <figure>
-            <img src="assets/logs/place-green-pose.png" alt="Placement pose inside the yellow box">
-            <figcaption>The same API pattern transfers to the green cube and yellow box.</figcaption>
-          </figure>
         </div>
       </section>
 

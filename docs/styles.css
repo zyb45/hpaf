@@ -25,6 +25,7 @@ body {
   background: var(--paper);
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
 a {
@@ -56,6 +57,7 @@ video {
   inset: 0;
 }
 
+.hero-media img,
 .hero-media video {
   width: 100%;
   height: 100%;
@@ -108,7 +110,9 @@ video {
 .hero-content {
   position: relative;
   z-index: 1;
-  width: min(100%, 68rem);
+  width: 100%;
+  max-width: 68rem;
+  min-width: 0;
 }
 
 .eyebrow,
@@ -199,7 +203,8 @@ video {
 }
 
 .section-inner {
-  width: min(100%, 72rem);
+  width: 100%;
+  max-width: 72rem;
   margin: 0 auto;
 }
 
@@ -303,13 +308,71 @@ figcaption {
   background: #eef4f1;
 }
 
+.demo-showcase {
+  display: grid;
+  grid-template-columns: minmax(17rem, 26rem) minmax(0, 1fr);
+  gap: 2.25rem;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.demo-player {
+  width: min(100%, 26rem);
+  padding: 0.65rem;
+  border: 1px solid #24302d;
+  border-radius: 8px;
+  background: var(--black);
+  box-shadow: 0 1.5rem 3rem rgba(13, 15, 14, 0.18);
+}
+
 .demo-video {
   width: 100%;
-  aspect-ratio: 16 / 9;
-  margin-top: 2rem;
+  aspect-ratio: 9 / 16;
+  margin: 0;
   object-fit: contain;
-  background: var(--black);
+  background: #000000;
+  border-radius: 6px;
+}
+
+.demo-panel p {
+  max-width: 34rem;
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.08rem;
+}
+
+.demo-facts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.85rem;
+  margin: 2rem 0 0;
+}
+
+.demo-facts div {
+  min-height: 6.4rem;
+  padding: 1rem;
+  border-top: 4px solid var(--teal);
   border-radius: 8px;
+  background: rgba(255, 255, 255, 0.68);
+}
+
+.demo-facts div:nth-child(2) {
+  border-top-color: var(--clay);
+}
+
+.demo-facts div:nth-child(3) {
+  border-top-color: var(--amber);
+}
+
+.demo-facts dt {
+  font-weight: 850;
+  color: var(--ink);
+}
+
+.demo-facts dd {
+  margin: 0.35rem 0 0;
+  color: var(--muted);
+  font-size: 0.92rem;
 }
 
 .trace {
@@ -323,13 +386,13 @@ figcaption {
 
 .timeline {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
   margin-top: 3rem;
 }
 
 .task-card {
-  min-height: 16rem;
+  min-height: 25rem;
   padding: 1.2rem;
   display: flex;
   flex-direction: column;
@@ -348,6 +411,16 @@ figcaption {
   font-weight: 850;
 }
 
+.task-shot {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #f3f5f1;
+}
+
 .task-card:nth-child(2) .task-index {
   background: var(--clay);
 }
@@ -364,33 +437,6 @@ figcaption {
   margin-top: auto;
   color: var(--teal-dark);
   font-size: 0.92rem;
-}
-
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1rem;
-  margin-top: 1rem;
-}
-
-.gallery figure {
-  margin: 0;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  overflow: hidden;
-  background: var(--white);
-}
-
-.gallery img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-}
-
-.gallery figcaption {
-  min-height: 5.2rem;
-  margin: 0;
-  padding: 0.85rem;
 }
 
 .code {
@@ -499,8 +545,8 @@ code {
 
   .contribution-grid,
   .timeline,
-  .gallery,
   .code-layout,
+  .demo-showcase,
   .split {
     grid-template-columns: 1fr;
   }
@@ -521,17 +567,34 @@ code {
   .task-card {
     min-height: auto;
   }
+
+  .demo-player {
+    margin: 0 auto;
+  }
 }
 
 @media (max-width: 620px) {
   .site-nav {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
     align-items: flex-start;
   }
 
   .nav-links {
-    display: grid;
-    grid-template-columns: repeat(2, auto);
-    justify-content: end;
+    display: none;
+  }
+
+  .hero-media img {
+    object-position: 64% center;
+  }
+
+  .hero-content {
+    width: calc(100vw - 2.5rem);
+    max-width: calc(100vw - 2.5rem);
+  }
+
+  .subtitle {
+    max-width: 20rem;
   }
 
   .hero h1 {
@@ -543,7 +606,14 @@ code {
     justify-content: center;
   }
 
+  .hero-actions {
+    max-width: 21rem;
+  }
+
   .hero-metrics {
+    width: auto;
+    max-width: none;
+    grid-template-columns: repeat(3, 6.6rem);
     gap: 0.45rem;
   }
 
@@ -561,8 +631,8 @@ code {
     line-height: 1.25;
   }
 
-  .gallery figcaption {
-    min-height: auto;
+  .demo-facts {
+    grid-template-columns: 1fr;
   }
 
   .footer {
