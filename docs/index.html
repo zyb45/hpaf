@@ -13,7 +13,12 @@
   <body>
     <header class="hero" id="top">
       <div class="hero-media" aria-hidden="true">
-        <img src="assets/hero-robot-lab.png" alt="">
+        <div class="hero-grid">
+          <img src="assets/logs/task-01-grasp-blue.png" alt="">
+          <img src="assets/logs/task-02-place-blue.png" alt="">
+          <img src="assets/logs/task-03-grasp-green.png" alt="">
+          <img src="assets/logs/task-04-place-green.png" alt="">
+        </div>
       </div>
       <div class="hero-shade" aria-hidden="true"></div>
 
@@ -35,7 +40,8 @@
           into API-grounded Python programs, real robot execution, and verification-gated progress.
         </p>
         <div class="hero-actions" aria-label="Project links">
-          <a href="https://github.com/zyb45/hpaf">GitHub repository</a>
+          <a class="action-primary" href="https://github.com/zyb45/hpaf5" target="_blank" rel="noreferrer">GitHub repository</a>
+          <button type="button" data-paper-alert>arXiv paper</button>
           <a href="#demo">Watch the demo</a>
         </div>
         <dl class="hero-metrics">
@@ -122,15 +128,15 @@
         </div>
         <div class="section-inner demo-showcase">
           <div class="demo-player" aria-label="Portrait demo video player">
-            <video class="demo-video" controls autoplay muted loop playsinline preload="auto">
-              <source src="assets/demo.mp4" type="video/mp4">
+            <video class="demo-video" controls autoplay muted loop playsinline preload="metadata" poster="assets/demo-poster.jpg">
+              <source src="assets/demo-h264.mp4" type="video/mp4">
             </video>
           </div>
           <div class="demo-panel">
             <p>
-              The source video is a portrait recording, so the page keeps it in a 9:16 player
-              instead of stretching it into a landscape slot. This preserves the robot motion and
-              tabletop layout without hiding the video behind a still image.
+              The source video is a portrait recording, so the page keeps it in a 9:16 player.
+              The web copy is encoded as H.264 with a poster frame to keep playback compatible
+              with GitHub Pages and common desktop browsers.
             </p>
             <dl class="demo-facts">
               <div>
@@ -229,16 +235,16 @@ return_to_observe_pose()
 result = ai_verify_atomic_task()</code></pre>
 
           <div class="stack-list" aria-label="Implementation modules">
-            <a href="https://github.com/zyb45/hpaf/blob/main/hpaf/pipeline/orchestrator.py">
+            <a href="https://github.com/zyb45/hpaf5/blob/main/hpaf/pipeline/orchestrator.py">
               PipelineOrchestrator | run directories, retries, generated scripts
             </a>
-            <a href="https://github.com/zyb45/hpaf/blob/main/hpaf/api/runtime_api.py">
+            <a href="https://github.com/zyb45/hpaf5/blob/main/hpaf/api/runtime_api.py">
               RuntimeAPI | robot-safe functions exposed to generated programs
             </a>
-            <a href="https://github.com/zyb45/hpaf/blob/main/hpaf/perception/foundation_vision_perception.py">
+            <a href="https://github.com/zyb45/hpaf5/blob/main/hpaf/perception/foundation_vision_perception.py">
               FoundationVisionPerceptionService | Florence-2, GroundingDINO, RGB-D pose artifacts
             </a>
-            <a href="https://github.com/zyb45/hpaf/blob/main/configs/api_registry.yaml">
+            <a href="https://github.com/zyb45/hpaf5/blob/main/configs/api_registry.yaml">
               API registry | bounded action space for code generation
             </a>
           </div>
@@ -248,7 +254,19 @@ result = ai_verify_atomic_task()</code></pre>
 
     <footer class="footer">
       <p>HPAF | Hierarchical Program-Aided Framework for Real-World Robotic Task Execution</p>
-      <a href="#top">Back to top</a>
+      <div class="footer-links">
+        <a href="https://github.com/zyb45/hpaf5" target="_blank" rel="noreferrer">Repository</a>
+        <a href="#top">Back to top</a>
+      </div>
     </footer>
+    <script>
+      const paperButton = document.querySelector("[data-paper-alert]");
+
+      if (paperButton) {
+        paperButton.addEventListener("click", () => {
+          window.alert("ArXiv 文章正在抓紧写，完成后会在这里更新链接。");
+        });
+      }
+    </script>
   </body>
 </html>
