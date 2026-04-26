@@ -23,33 +23,76 @@
         </div>
       </nav>
 
-      <div class="hero-content">
-        <p class="eyebrow">Real-world robot manipulation | PiPER arm | dual-view RGB-D</p>
-        <h1>HPAF</h1>
-        <p class="hero-author">Yibo Zhang</p>
-        <p class="subtitle">
-          Hierarchical Program-Aided Framework for turning a long-horizon language instruction
-          into API-grounded Python programs, real robot execution, and verification-gated progress.
-        </p>
-        <div class="hero-actions" aria-label="Project links">
-          <a class="action-primary" href="https://github.com/zyb45/hpaf5" target="_blank" rel="noreferrer">GitHub repository</a>
-          <button type="button" data-paper-alert>arXiv paper</button>
-          <a href="#demo">Watch the demo</a>
+      <div class="hero-inner">
+        <div class="hero-content">
+          <p class="eyebrow">Real-world robot manipulation | PiPER arm | dual-view RGB-D</p>
+          <h1>HPAF</h1>
+          <p class="hero-author">Yibo Zhang</p>
+          <p class="subtitle">
+            Hierarchical Program-Aided Framework for turning a long-horizon language instruction
+            into API-grounded Python programs, real robot execution, and verification-gated progress.
+          </p>
+          <div class="hero-actions" aria-label="Project links">
+            <a class="action-primary" href="https://github.com/zyb45/hpaf5" target="_blank" rel="noreferrer">GitHub repository</a>
+            <button type="button" data-paper-alert>arXiv paper</button>
+            <a href="#demo">Watch the demo</a>
+          </div>
+          <dl class="hero-metrics">
+            <div>
+              <dt>4</dt>
+              <dd>logged tasks</dd>
+            </div>
+            <div>
+              <dt>2</dt>
+              <dd>camera streams</dd>
+            </div>
+            <div>
+              <dt>12</dt>
+              <dd>runtime APIs</dd>
+            </div>
+          </dl>
         </div>
-        <dl class="hero-metrics">
-          <div>
-            <dt>4</dt>
-            <dd>logged tasks</dd>
+
+        <aside class="hero-system" aria-label="HPAF execution flow">
+          <div class="system-header">
+            <span>Execution Flow</span>
+            <strong>Verification-gated</strong>
           </div>
-          <div>
-            <dt>2</dt>
-            <dd>camera streams</dd>
+          <div class="flow-card">
+            <span class="flow-index">01</span>
+            <div>
+              <h2>TaskAgent</h2>
+              <p>Long instruction to ordered atomic tasks.</p>
+            </div>
           </div>
-          <div>
-            <dt>12</dt>
-            <dd>runtime APIs</dd>
+          <div class="flow-card">
+            <span class="flow-index">02</span>
+            <div>
+              <h2>ProgramAgent</h2>
+              <p>Atomic task to bounded Python over robot APIs.</p>
+            </div>
           </div>
-        </dl>
+          <div class="flow-card">
+            <span class="flow-index">03</span>
+            <div>
+              <h2>Runtime APIs</h2>
+              <p>Perception, pose estimation, motion, and gripper control.</p>
+            </div>
+          </div>
+          <div class="flow-card">
+            <span class="flow-index">04</span>
+            <div>
+              <h2>Verifier</h2>
+              <p>Completion checks decide whether the next task can run.</p>
+            </div>
+          </div>
+          <div class="system-footer" aria-label="Runtime modules">
+            <span>detect</span>
+            <span>grasp</span>
+            <span>place</span>
+            <span>verify</span>
+          </div>
+        </aside>
       </div>
     </header>
 

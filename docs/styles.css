@@ -42,13 +42,17 @@ video {
 
 .hero {
   position: relative;
-  min-height: 92svh;
+  min-height: 88svh;
   overflow: hidden;
   color: var(--white);
-  background: var(--black);
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    #101311;
+  background-size: 4rem 4rem;
   display: grid;
-  align-items: end;
-  padding: 2rem 3rem 4rem;
+  align-items: center;
+  padding: 6.5rem 3rem 4.5rem;
 }
 
 .site-nav {
@@ -87,11 +91,21 @@ video {
   color: var(--white);
 }
 
-.hero-content {
+.hero-inner {
   position: relative;
   z-index: 1;
   width: 100%;
-  max-width: 68rem;
+  max-width: 72rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(20rem, 0.95fr);
+  gap: 3rem;
+  align-items: center;
+}
+
+.hero-content {
+  width: 100%;
+  max-width: 42rem;
   min-width: 0;
 }
 
@@ -160,6 +174,115 @@ video {
   background: var(--white);
   color: var(--ink);
   border-color: var(--white);
+}
+
+.hero-system {
+  position: relative;
+  min-width: 0;
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 8px;
+  background: rgba(247, 248, 244, 0.08);
+  box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.28);
+}
+
+.system-header,
+.system-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.system-header {
+  padding: 0.25rem 0.25rem 1rem;
+}
+
+.system-header span {
+  color: var(--amber);
+  font-size: 0.8rem;
+  font-weight: 850;
+  text-transform: uppercase;
+}
+
+.system-header strong {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.86rem;
+}
+
+.flow-card {
+  display: grid;
+  grid-template-columns: 2.6rem minmax(0, 1fr);
+  gap: 0.85rem;
+  align-items: start;
+  min-height: 5rem;
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 8px;
+  background: rgba(13, 15, 14, 0.52);
+}
+
+.flow-card + .flow-card {
+  margin-top: 0.7rem;
+}
+
+.flow-index {
+  width: 2.35rem;
+  height: 2.35rem;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 8px;
+  background: var(--teal);
+  color: var(--white);
+  font-size: 0.82rem;
+  font-weight: 850;
+}
+
+.flow-card:nth-of-type(3) .flow-index {
+  background: var(--clay);
+}
+
+.flow-card:nth-of-type(4) .flow-index {
+  background: var(--amber);
+}
+
+.flow-card:nth-of-type(5) .flow-index {
+  background: var(--teal-dark);
+}
+
+.flow-card h2 {
+  margin: 0;
+  color: var(--white);
+  font-size: 1.05rem;
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+
+.flow-card p {
+  margin: 0.35rem 0 0;
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.system-footer {
+  flex-wrap: wrap;
+  padding: 1rem 0.25rem 0.2rem;
+}
+
+.system-footer span {
+  min-width: 4.8rem;
+  min-height: 2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.35rem 0.65rem;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 999px;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
 }
 
 .hero-metrics {
@@ -543,6 +666,19 @@ code {
     font-size: 1.08rem;
   }
 
+  .hero-inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .hero-content {
+    max-width: 46rem;
+  }
+
+  .hero-system {
+    max-width: 46rem;
+  }
+
   .contribution-grid,
   .timeline,
   .code-layout,
@@ -585,12 +721,11 @@ code {
   }
 
   .hero-content {
-    width: calc(100vw - 2.5rem);
-    max-width: calc(100vw - 2.5rem);
+    max-width: none;
   }
 
   .subtitle {
-    max-width: 20rem;
+    max-width: 21rem;
   }
 
   .hero h1 {
@@ -605,6 +740,27 @@ code {
 
   .hero-actions {
     max-width: 21rem;
+  }
+
+  .hero-system {
+    padding: 0.75rem;
+  }
+
+  .system-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .flow-card {
+    grid-template-columns: 2.2rem minmax(0, 1fr);
+    gap: 0.7rem;
+    padding: 0.8rem;
+  }
+
+  .flow-index {
+    width: 2rem;
+    height: 2rem;
   }
 
   .hero-metrics {
