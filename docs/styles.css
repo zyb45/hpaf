@@ -51,34 +51,6 @@ video {
   padding: 2rem 3rem 4rem;
 }
 
-.hero-media,
-.hero-shade {
-  position: absolute;
-  inset: 0;
-}
-
-.hero-grid {
-  width: 100%;
-  height: 100%;
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  opacity: 0.74;
-  transform: scale(1.02);
-}
-
-.hero-grid img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: saturate(0.92) contrast(1.05);
-}
-
-.hero-shade {
-  background:
-    linear-gradient(90deg, rgba(13, 15, 14, 0.86) 0%, rgba(13, 15, 14, 0.58) 46%, rgba(13, 15, 14, 0.28) 100%),
-    linear-gradient(0deg, rgba(13, 15, 14, 0.82) 0%, rgba(13, 15, 14, 0.04) 58%);
-}
-
 .site-nav {
   position: absolute;
   top: 0;
@@ -138,6 +110,13 @@ video {
   font-size: 5rem;
   line-height: 0.95;
   letter-spacing: 0;
+}
+
+.hero-author {
+  margin: 0.7rem 0 0;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 1rem;
+  font-weight: 750;
 }
 
 .subtitle {
@@ -575,11 +554,6 @@ code {
   .hero-metrics {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     margin-top: 2rem;
-  }
-
-  .hero-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-template-rows: repeat(2, minmax(0, 1fr));
   }
 
   .section {
